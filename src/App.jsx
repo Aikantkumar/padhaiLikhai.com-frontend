@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './components/Auth/Login.jsx'
 import Home from './pages/Home.jsx'
-import Courses from './components/courses.jsx'
+import Courses from '../src/components/Dashboard/Courses.jsx'
+import Course from './pages/Course.jsx';
 import Lenis from 'lenis'
-import gsap from 'gsap';
+import gsap from 'gsap-trial';
 import { useGSAP } from '@gsap/react';
 import Scrolltrigger from 'gsap/all'
 
@@ -26,17 +28,25 @@ const App = () => {
   //       lenis.raf(time);
   //       requestAnimationFrame(raf);
   //     }
-      
+
   //     requestAnimationFrame(raf);
   // });
 
 
-  
+
   return (
     <>
-      <Home />
-      {/* <Login /> */}
-      {/* <Courses /> */}
+      <Router>
+        <Routes>
+          {/* <Route path='/' element={<Home />} /> */}
+          
+          
+          {/* <Route path='/' element={<Courses />} /> */}
+          <Route path='/' element={<Course />} />
+          
+
+        </Routes>
+      </Router>
     </>
   )
 }

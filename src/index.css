@@ -23,6 +23,18 @@
   overflow-x:hidden;
   
 }
+.tag{
+  background-color: yellow;
+  height: 40px;
+  width: 140px;
+  color: black;
+  border-radius:2px;
+  font:bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
 
 .cursor-circle {
   position: absolute;
