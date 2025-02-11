@@ -102,12 +102,82 @@
   transform: translateX(-50vw);
 }
 
+
 .extra{
   font-stretch:expanded;
 }
 .bulletpoints{
   font-stretch:condensed;
 }
+
+/* *****************************************for course page */
+/* .register{
+  transform: translateX(35vw);
+}
+.register2{
+  transform: translateX(-45vw);
+} */
+
+@keyframes specialanimation1{
+  0%{
+    opacity: 0;
+}
+25%{
+  opacity: 0;
+}
+50%{
+  opacity: 0;
+}
+75%{
+  opacity: 0.5;
+}
+
+  100%{
+    transform: translateX(37vw);
+    opacity: 1;
+  }
+}
+
+@keyframes specialanimation2{
+  0%{
+      opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 0.5;
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(-37vw);
+  }
+}
+
+.animate-on-load1{
+  animation: specialanimation1 1s ease forwards; /* Add 'forwards' to keep the final state - (setting the animation-fill-mode property to forwards) */
+}
+
+.animate-on-load2{
+  animation: specialanimation2 1s ease forwards; /* Add 'forwards' to keep the final state */
+}
+
+.whitebox{
+  display: none;
+  /* background-color: blue; */
+  transition: all 0.3s ease-in;
+}
+
+.circle1:hover ~ .whitebox{
+  display:inline-block;
+  /* background-color: #E94B35; */
+  
+}
+
 
 .poppins-extrabold {
     font-family: "Poppins", serif;

@@ -8,6 +8,8 @@ import Lenis from 'lenis'
 import gsap from 'gsap-trial';
 import { useGSAP } from '@gsap/react';
 import Scrolltrigger from 'gsap/all'
+import Teacherprofiles from './pages/Teacherprofiles.jsx';
+import PersonalProfiles from './pages/PersonalProfiles.jsx';
 
 const App = () => {
   // gsap.registerPlugin(useGSAP);
@@ -42,7 +44,9 @@ const App = () => {
           
           
           {/* <Route path='/' element={<Courses />} /> */}
-          <Route path='/' element={<Course />} />
+          {/* <Route path='/' element={<Course />} /> */}
+          {/* <Route path='/' element={<Teacherprofiles />} /> */}
+          <Route path='/' element={<PersonalProfiles/>} />
           
 
         </Routes>
