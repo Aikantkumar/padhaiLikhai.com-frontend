@@ -1,6 +1,7 @@
 import React, { createElement, useEffect, useState } from 'react'
 import { FaTimes } from "react-icons/fa";
 import { toast } from 'react-toastify'
+import axios from 'axios';
 
 
 const RegisterTeacher = () => {

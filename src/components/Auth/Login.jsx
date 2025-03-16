@@ -35,12 +35,19 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            const response = await axios.post("http://localhost:4000/api/v1/users/register", { email, userName, password },
+            const response = await axios.post("http://localhost:4000/api/v1/users/login", { email, userName, password },
                 {
                     withCredentials: true,
                     headers: { "Content-Type": "application/json" },
                 }
             )
+
+            // the data for further use(we will use this "user" data when we will be needing to show the details of the user like the userId or profilepic):
+            const data = await response.json();
+            
+            localStorage.setItem('accessToken', data.accessToken)
+            localStorage.setItem('refreshToken', data.refreshToken)
+            localStorage.setItem('user', JSON.stringify(data.user))
 
             toast.success(response.data.message)
             setIsAuthenticated(true);

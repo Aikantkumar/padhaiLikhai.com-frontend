@@ -178,6 +178,59 @@
   
 }
 
+.whitebox:hover{
+  display: inline-block;
+}
+
+
+.Allyourvideos:active ~ .videoholder{
+    background-color: slategray;
+    
+    z-index: 10;
+
+    
+}
+
+.content{
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.css1{
+  background-color: none;
+}
+
+.css2{
+  background-color: slategray;
+}
+
+
+.options{
+  display:none;
+}
+
+.allplaylists{
+  display:none;
+}
+
+.createPlaylist{
+  display: none;
+}
+
+.uploadVideo{
+  display: none;
+}
+
+.videosOfPlaylist{
+  display: none;
+}
+
+
+
+
 
 .poppins-extrabold {
     font-family: "Poppins", serif;

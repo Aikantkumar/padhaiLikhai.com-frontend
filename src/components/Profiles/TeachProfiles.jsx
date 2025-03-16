@@ -32,6 +32,7 @@ const TeachProfiles = () => {
         
     }, [])
 
+    
 
     const handleTeachFullProfile = (teacher) => {
         navigate(`/teacher/${teacher.id}`) // make this route in app.jsx <Route path="/teacher/:id" element={<TeacherProfile />} />

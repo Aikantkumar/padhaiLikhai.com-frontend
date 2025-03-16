@@ -10,6 +10,9 @@ import { useGSAP } from '@gsap/react';
 import Scrolltrigger from 'gsap/all'
 import Teacherprofiles from './pages/Teacherprofiles.jsx';
 import PersonalProfiles from './pages/PersonalProfiles.jsx';
+import SeeAllEnrollments from './components/Enrollments/SeeAllEnrollments.jsx';
+import ShowTeacherProfile from './components/ShowTeacherProfile.jsx';
+import ShowPlaylists from './components/Playlist/ShowPlaylists.jsx';
 
 const App = () => {
   // gsap.registerPlugin(useGSAP);
@@ -46,7 +49,10 @@ const App = () => {
           {/* <Route path='/' element={<Courses />} /> */}
           {/* <Route path='/' element={<Course />} /> */}
           {/* <Route path='/' element={<Teacherprofiles />} /> */}
-          <Route path='/' element={<PersonalProfiles/>} />
+          {/* <Route path='/' element={<PersonalProfiles/>} /> */}
+          {/* <Route path='/' element={<ShowTeacherProfile />} /> */}
+          {/* <Route path='/' element={<SeeAllEnrollments/>} /> */}
+          <Route path='/' element={<ShowPlaylists/>} />
           
 
         </Routes>
