@@ -180,7 +180,7 @@ const ShowPlaylists = () => {
          const response = axios.post('http://localhost:4000/api/v1/teacher/videos', formData ,
              {
                  withCredentials: true,
-                 headers: { "Content-Type": "application/json" }
+                 headers: { "Content-Type": "multipart/form-data" }
              }
          )
 

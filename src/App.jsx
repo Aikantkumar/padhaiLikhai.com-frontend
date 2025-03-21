@@ -13,6 +13,8 @@ import PersonalProfiles from './pages/PersonalProfiles.jsx';
 import SeeAllEnrollments from './components/Enrollments/SeeAllEnrollments.jsx';
 import ShowTeacherProfile from './components/ShowTeacherProfile.jsx';
 import ShowPlaylists from './components/Playlist/ShowPlaylists.jsx';
+import ScheduleTest from './components/ScheduleTest/ScheduleTest.jsx';
+import AttemptTest from './components/ScheduleTest/AttemptTest.jsx';
 
 const App = () => {
   // gsap.registerPlugin(useGSAP);
@@ -52,7 +54,9 @@ const App = () => {
           {/* <Route path='/' element={<PersonalProfiles/>} /> */}
           {/* <Route path='/' element={<ShowTeacherProfile />} /> */}
           {/* <Route path='/' element={<SeeAllEnrollments/>} /> */}
-          <Route path='/' element={<ShowPlaylists/>} />
+          {/* <Route path='/' element={<ShowPlaylists/>} /> */}
+          {/* <Route path='/' element={<ScheduleTest/>} /> */}
+          <Route path='/' element={<AttemptTest/>} />
           
 
         </Routes>

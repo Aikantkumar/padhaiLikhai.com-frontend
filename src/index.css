@@ -230,7 +230,9 @@
 
 
 
-
+.test{
+  display: none;
+}
 
 .poppins-extrabold {
     font-family: "Poppins", serif;
