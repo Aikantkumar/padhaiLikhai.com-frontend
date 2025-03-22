@@ -7,10 +7,12 @@ import { Router } from 'react-router-dom'
 const Home = () => {
   return (
     <>
-        {/* <Page1 /> */}
+        <Page1 />
+
+        
         {/* <Route  path='/register' element={<Register/>} /> */}
         {/* <Register/> */}
-        <Login/>
+        {/* <Login/> */}
         {/* <Footer/> */}
     </>
   )

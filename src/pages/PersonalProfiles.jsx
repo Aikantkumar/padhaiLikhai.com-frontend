@@ -1,5 +1,5 @@
 import React from 'react'
-import PersonalProfile from '../components/Dashboard/PersonalProfile.jsx'
+import PersonalProfile from '../components/Profiles/PersonalProfile.jsx'
 
 const PersonalProfiles = () => {
   return (
