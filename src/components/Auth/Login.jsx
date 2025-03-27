@@ -58,6 +58,10 @@ const Login = () => {
         }
     }
 
+    const handleRegistration = () => {
+        navigateTo("/register")
+    }
+
     return (
         <>
             <div className='bg-[#0D0D0D]'>
@@ -104,6 +108,8 @@ const Login = () => {
                         </div>
                     </GoogleOAuthProvider>
                 </div>
+
+                <div onClick={handleRegistration} className='text-white'>Not Registered? Click here</div>
 
                 <div className='text-[120px] text-[#B8A895] tracking-[-5px] font-semibold bottom-0 left'>
                     <div className='mb-[-90px]'>Be</div>

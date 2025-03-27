@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PersonalProfile = () => {
+const PersonalStudentProfile = () => {
 
   
 
@@ -70,12 +70,12 @@ const PersonalProfile = () => {
 
 
         <div className=' w-[30vw] h-[100vh] bg-gray-800 rounded-[8px] flex flex-col items-center'>
-          <div className='relative mb-[50px]'>
+          {/* <div className='relative mb-[50px]'>
             <div className="circle1 z-10 relative w-[150px] h-[150px] mt-[30px] bg-yellow-300 rounded-full"></div>
             <div className="whitebox absolute top-[15px] right-[-10px] bg-white w-[350px] h-[180px] rounded-lg flex items-center justify-between p-[10px]">
               <div className='left-[10px] absolute text-[10px] text-lg font-semibold'>Enrollments</div>
             </div>
-          </div>
+          </div> */}
 
           <div className='relative mb-[50px]'>
             <div className="circle1 z-10 relative w-[150px] h-[150px] mt-[30px] bg-yellow-300 rounded-full"></div>
@@ -87,7 +87,7 @@ const PersonalProfile = () => {
           <div className='relative mb-[50px]'>
             <div className="circle1 z-10 relative w-[150px] h-[150px] mt-[30px] bg-yellow-300 rounded-full"></div>
             <div className="whitebox absolute top-[15px] right-[-10px] bg-white w-[350px] h-[180px] rounded-lg flex items-center justify-between p-[10px]">
-              <div className='left-[10px] absolute text-[10px] text-lg font-semibold'>Schedule Test/Classes</div>
+              <div className='left-[10px] absolute text-[10px] text-lg font-semibold'>See Scheduled Test/Classes</div>
             </div>
           </div>
         </div>
@@ -96,4 +96,4 @@ const PersonalProfile = () => {
   )
 }
 
-export default PersonalProfile
+export default PersonalStudentProfile

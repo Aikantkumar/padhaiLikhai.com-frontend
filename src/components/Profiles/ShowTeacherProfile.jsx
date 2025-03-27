@@ -3,12 +3,13 @@
 import React from 'react';
 import  { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 
 const ShowTeacherProfile = () => {
     const {id} = useParams()
     const [userData, setUserData] = useState(null)
+    const navigate = useNavigate()
 
     // const location = useLocation()
     // const { photo } = location.state //we have sent photo in state along with the params
@@ -42,17 +43,36 @@ const ShowTeacherProfile = () => {
         try {
             const user =  JSON.parse(localStorage.getItem('user'))
             const studentId = user._id
-    
+            const role = user.role
+
             const teacherId = id  //const {id} = useParams()
-    
-            const response = await axios.post("http://localhost:4000/api/v1/teacher/getAllEnrollments", {teacherId, studentId},
-                {
-                    withCredentials : "true",
-                    header: {"Content-Type" : "application/json"}
-                }
-            )
-    
-            toast.success(response.data.message)
+            
+
+            if(role === 'student'){
+               const   studentResponse = await axios.post("http://localhost:4000/api/v1/student/enrollinCourse", {teacherId, studentId},
+                    {
+                        withCredentials : "true",
+                        header: {"Content-Type" : "application/json"}
+                    }
+                )
+
+                toast.success(studentResponse.data.message)
+            }
+            else{
+// /teacher/getAllEnrollments
+                
+               const teacherResponse = await axios.post("http://localhost:4000/api/v1/teacher/getAllEnrollments", {teacherId, studentId},
+                    {
+                        withCredentials : "true",
+                        header: {"Content-Type" : "application/json"}
+                    }
+                )
+
+                toast.success(teacherResponse.data.message)
+            }
+            
+            navigate("/course")
+            
         } catch (error) {
             toast.error(error.response.data.message)
         }

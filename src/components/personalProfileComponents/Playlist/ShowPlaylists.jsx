@@ -39,7 +39,7 @@ const ShowPlaylists = () => {
 
         async function fetchUserVideos() {
             try {
-                const response = await fetch()
+                const response = await fetch(`http://localhost:4000/api/v1/teacher/${id}/videos`)
                 const data = await response.json()
                 setVideos(data)
 
@@ -50,14 +50,14 @@ const ShowPlaylists = () => {
             }
         }
 
-        fetchUserPlaylists(id)
+        // fetchUserPlaylists()
         fetchUserVideos()
 
     }, [id])
 
-    const fetchUserPlaylists = async(userId) => {
+    const fetchUserPlaylists = async() => {
         try {
-            const response = await fetch()
+            const response = await fetch(`http://localhost:4000/api/v1/users/${id}/playlists`)
             const data = await response.json()
             setFolders(data)
 
@@ -72,10 +72,10 @@ const ShowPlaylists = () => {
 
     const handleCreateFolderPlaylist = async () => {
         // const { userId } = localStorage.getItem() /////////////////////////////////////
-        const userId = JSON.parse(localStorage.getItem('userId'));
+        // const userId = JSON.parse(localStorage.getItem('userId'));
 
         try {
-            const response = await axios.post(`http://localhost:4000/api/v1/users/playlists/${userId}`, { folderName, folderDescription },
+            const response = await axios.post(`http://localhost:4000/api/v1/users/playlists/${id}`, { folderName, folderDescription },
                 {
                     withCredentials: true,
                     headers: { "Content-Type": "application/json" }
@@ -88,7 +88,7 @@ const ShowPlaylists = () => {
         }
 
         // setFolders([...folders, { name: folderName, description: folderDescription, files: [] }])
-        fetchUserPlaylists(userId) // Fetch the updated list of folders after creating a new one
+        fetchUserPlaylists() // Fetch the updated list of folders after creating a new one
         setFolderName('')
     }
 
@@ -177,7 +177,7 @@ const ShowPlaylists = () => {
         formData.append('title', videoTitle); // Video title
         formData.append('description', videoDescription); // Video description
 
-         const response = axios.post('http://localhost:4000/api/v1/teacher/videos', formData ,
+         const response = axios.post(`http://localhost:4000/api/v1/teacher/user/${id}/videos`, formData ,
              {
                  withCredentials: true,
                  headers: { "Content-Type": "multipart/form-data" }

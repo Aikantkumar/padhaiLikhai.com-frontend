@@ -18,6 +18,7 @@ const Register = () => {
     const [gender, setGender] = useState("")
     const [password, setPassword] = useState("")
     const [avatar, setAvatar] = useState(null);    
+    const [role, setRole] = useState(null);    
     const [field, setField] = useState([])
     const [specialisation, setSpecialisation] = useState("")
     const [experience, setExperience] = useState("1")
@@ -28,6 +29,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const handleregister = async (e) => {
+        alert('ram ram')
         e.preventDefault();
         const selectedtags = getselectedtags()
 
@@ -54,11 +56,12 @@ const Register = () => {
             }
 
 
-            toast.success(response.data.message);
+            // toast.success(response.data.message);
+            alert('hogya ji register')
             setIsAuthenticated(true);
-            navigate("/")
+            navigate("/course")
         } catch (error) {
-            toast.error(error.response.data.message);
+            // toast.error(error.response.data.message);
         }
     }
 
@@ -79,11 +82,14 @@ const Register = () => {
         // console.log(tag)
     }
 
-    const handleToggleRole = () => {
-        const role = document.getElementById("role").value
+    const handleToggleRole = (role) => {
+        // const role = document.getElementById("role").value
         const teachfields = document.getElementById("teacherfields")
-
-        if (role === "teacher") {
+        setRole(role)
+        if(role === null){
+            teachfields.style.display = "none"
+        }
+        else if (role === "teacher") {
             teachfields.style.display = "block"
         }
         else {
@@ -1245,7 +1251,7 @@ const Register = () => {
 
                 <div className=' text-[#B8A895] flex flex-col items-center pt-[40px] w-[70vw] ml-[15vw]'>
                     <div className='tracking-[15px] mb-[100px] '>register</div>
-                    <form onSubmit={handleregister()}>
+                    <form onSubmit={handleregister}>
                         <div className="image h-[150px]  flex flex-col justify-center items-center ">
                             <div className='h-[150px] w-[150px] bg-slate-500 rounded-full' type="image" value={avatar} onChange={(e) => setAvatar(e.target.files[0])}> image</div>
                         </div>
@@ -1269,11 +1275,11 @@ const Register = () => {
                         </div>
                         <div className='mb-[40px]'>
                             <div className='text-[35px] font-semibold tracking-[-2px] mb-[-10px]'>DATE OF BIRTH</div>
-                            <input type="text" value={dob} onChange={(e) => setDob(e.target.value)} className='w-[50vw] h-[7vh] bg-[#0D0D0D] border-[2px] border-[#E94B35]  rounded-md' />
+                            <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className='w-[50vw] h-[7vh] bg-[#0D0D0D] border-[2px] border-[#E94B35]  rounded-md' />
                         </div>
                         <div className='mb-[40px]'>
                             <div className='text-[35px] font-semibold tracking-[-2px] mb-[-10px]'>GENDER</div>
-                            <input type="text" value={firstName} onChange={(e) => setGender(e.target.value)} className='w-[50vw] h-[7vh] bg-[#0D0D0D] border-[2px] border-[#E94B35]  rounded-md' />
+                            <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} className='w-[50vw] h-[7vh] bg-[#0D0D0D] border-[2px] border-[#E94B35]  rounded-md' />
                         </div>
                         <div className='mb-[40px]'>
                             <div className='text-[35px] font-semibold tracking-[-2px] mb-[-10px]'>SET PASSWORD</div>
@@ -1282,7 +1288,7 @@ const Register = () => {
 
                         <div className='mb-[40px]'>
                             <div className='text-[35px] font-semibold tracking-[-2px] mb-[-10px]'>Role</div>
-                            <select name="role" id="role" onChange={handleToggleRole()}>
+                            <select name="role" id="role"  onChange={(e) => handleToggleRole(e.target.value)}>
                                 <option value="student">Student</option>
                                 <option value="teacher">Teacher</option>
                             </select>
@@ -1291,7 +1297,7 @@ const Register = () => {
 
 
 
-                        <div id="teacherfields">
+                        <div  id="teacherfields">
                             <div className='mb-[40px]'>
                                 <div className='text-[35px] font-semibold tracking-[-2px] mb-[-10px]'>FIELD</div>
                                 {/* <input type="text" value={todo}  className='w-[50vw] h-[7vh] bg-[#0D0D0D] border-[2px] border-[#E94B35]  rounded-md' /> */}
@@ -1487,9 +1493,9 @@ const Register = () => {
                             </div>
                         </div>
 
+                    <button type="submit" className='button bg-[#E94B35] w-[200px] h-[40px] flex items-center justify-center font-semibold border-[1px] border-gray-400 text-black rounded-md'>lets go</button>
                     </form>
 
-                    <div className='button bg-[#E94B35] w-[200px] h-[40px] flex items-center justify-center font-semibold border-[1px] border-gray-400 text-black rounded-md'>lets go</div>
                 </div>
 
                 <div className='text-[120px] text-[#B8A895] tracking-[-5px] font-semibold bottom-0 left'>

@@ -234,6 +234,12 @@
   display: none;
 }
 
+.submissionsOfTests{
+  display: none;
+}
+
+
+
 .poppins-extrabold {
     font-family: "Poppins", serif;
     font-weight: 800;

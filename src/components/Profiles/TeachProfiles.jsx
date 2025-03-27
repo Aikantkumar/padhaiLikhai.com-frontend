@@ -1,5 +1,4 @@
-import React from 'react'
-import React from 'react'
+
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -8,12 +7,13 @@ const TeachProfiles = () => {
 
     const [teachers, setTeachers] = useState([])
     const navigate = useNavigate()
+    const { item } = useParams()
 
     useEffect(() => {
         const fetchteachers = async () => {
             try {
 
-                const response = await fetch("/api/v1/teacher/get-profiles6to8")
+                const response = await fetch(`/api/v1/teacher/get-profiles/${item}`)
                 const data = await response.json()
 
                 setTeachers(data.teachers)
@@ -30,11 +30,11 @@ const TeachProfiles = () => {
 
         fetchteachers()
         
-    }, [])
+    }, [item])
 
     
 
-    const handleTeachFullProfile = (teacher) => {
+    const handleTeachFullProfile = (teacher) => { //ShowTeacherProfile page
         navigate(`/teacher/${teacher.id}`) // make this route in app.jsx <Route path="/teacher/:id" element={<TeacherProfile />} />
     }
 

@@ -31,6 +31,7 @@ const page1 = () => {
 
 
   const handlegetstarted = () => {
+    e.preventDefault()
     navigate("/login")
   }
 
@@ -417,6 +418,7 @@ const page1 = () => {
 
   return (
     <>
+    
       <div ref={cursorcircleref} className="cursor-circle"></div>
       <div className='pagea1 '>
 

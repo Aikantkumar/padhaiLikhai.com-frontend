@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.jsx'
 
 
-export const Context = createContext({isAuthenticated : false})
+export const Context = createContext({ isAuthenticated: false })
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,7 +16,11 @@ createRoot(document.getElementById('root')).render(
         redirect_uri: window.location.origin
       }}
     >
-      <App />
+      {/* <App /> */}
+      <Context.Provider value={{ isAuthenticated: false }}>
+        <App />
+      </Context.Provider>
+
     </Auth0Provider>
   </StrictMode>,
 )
